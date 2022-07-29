@@ -16,7 +16,7 @@ const App = () => {
 			return;
 		}
 		setContacts(prevState => {
-			    return [...prevState.contacts , user]
+			    return {...prevState.contacts , user }
 			  });
   };
 	const handlerFilter = ({target: {value}}) => {
