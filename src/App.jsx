@@ -15,9 +15,7 @@ const App = () => {
 			alert( user.name + ' is already in contacts.' );
 			return;
 		}
-		setContacts(prevState => {
-			    return {...prevState.contacts , user }
-			  });
+		setContacts([...contacts , user ]);
   };
 	const handlerFilter = ({target: {value}}) => {
 		setFilter(value)
@@ -27,7 +25,7 @@ const App = () => {
 	}
 	const deleteUser = (userId) => {
 		let newMutMas = contacts.filter(({id}) => id !== userId)
-		setContacts(({contacts: [...newMutMas]}))
+		setContacts([...newMutMas])
 	}
 	const getVisableU = getVisableUsers();
 	return (
